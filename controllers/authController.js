@@ -64,8 +64,8 @@ exports.profile_update_post = [
             } else {
                 User.update({
                     email: req.body.email,
-                    firstname: req.body.firstname,
-                    lastname: req.body.lastname,
+                    first_name: req.body.firstname,
+                    last_name: req.body.lastname,
                     username: req.body.username,
                     img_url: req.file.filename,
                 },

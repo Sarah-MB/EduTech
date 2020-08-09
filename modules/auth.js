@@ -1,7 +1,7 @@
 var bCrypt = require('bcrypt-nodejs');
 var Strategy = require('passport-local').Strategy;
 // var dbLayer = require('../modules/dbLayer');
-var dbLayer = require('../models');
+// var dbLayer = require('../models');
 var auth = {};
 
 function generateHash(password) {

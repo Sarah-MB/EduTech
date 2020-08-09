@@ -1,0 +1,13 @@
+<% switch (page) {
+case 'authorPage' : %>
+       <%- include ('../content/author/author-content') %>
+       <% break;
+ 
+case 'postPage' : %>
+<%- include ('../content/post/post-content') %>
+       <% break;
+
+default : %>
+       <%- include ('../content/dashboard') %>
+       <%  
+} %>
