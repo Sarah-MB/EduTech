@@ -2,7 +2,7 @@ var passport = require('passport');
 var auth = require('../modules/auth.js');
 var multer  = require('multer')
 var path = require('path');
-var models = require('../models');
+var models = require('../models/user');
 var User = models.user;
 
 
@@ -16,9 +16,9 @@ exports.index = function(req, res) {
 exports.login_get = function(req, res){
     var user = req.user;
     if(!user){
-       res.render('pages/user/login', {title: 'Login'});
+       res.render('pages/login');
     }
-    res.redirect('/');
+    res.redirect('/login');
  }
 
 // Authenticate a user at login
@@ -44,11 +44,11 @@ exports.login_get = function(req, res){
 exports.signup_post = function(req, res) {
     auth.createUser(req, res, function(data) {
         if (data.success == false) {
-            return res.render('pages/user/create', { message : data.message });
+            return res.render('/pages/login/signup/');
         }
         // console.log(storage.destination);
         passport.authenticate('local')(req, res, function () {
-            res.redirect('/');
+            res.redirect('/pages/login/signup/');
         });
     });
  }

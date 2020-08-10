@@ -41,7 +41,7 @@ exports.user_login_get = function(req, res, next) {
          title: 'Login',
          user: req.user,
     };
-    res.render('login', displayData);
+    res.render('/login', displayData);
 };
 // Display list of all Users.
 exports.user_list = function(req, res, next) {
